@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李铮 - 机械工程师/结构工程师</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .header-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            margin-left: 2rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+            width: 100%;
+        }
+        
+        .contact-info a, .contact-info span {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-info a:hover {
+            color: var(--secondary-color);
+        }
+        
+        section {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        h3 {
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            border: 2px solid white;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+        }
+        
+        ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.4rem;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        
+        .awards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.2rem;
+        }
+        
+        .award-item {
+            background-color: white;
+            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .award-item h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .award-date {
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 1.2rem 0;
+            margin-top: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-photo {
+                margin: 1rem auto 0;
+                order: 2;
+            }
+            
+            .contact-info {
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .skills {
+                flex-direction: column;
+            }
+            
+            .awards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>李铮</h1>
+                    <p>结构工程师 / 机械工程师</p>
+                    <div class="contact-info">
+                        <a href="tel:17767719099">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                                <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                            </svg>
+                            17767719099
+                        </a>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                            </svg>
+                            微信号：Nellzsonn
+                        </span>
+                        <a href="mailto:270283940@qq.com">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                            </svg>
+                            270283940@qq.com
+                        </a>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                            </svg>
+                            杭州/上海/深圳
+                        </span>
+                    </div>
+                </div>
+                <img src="profile-photo.jpg" alt="李铮的照片" class="profile-photo">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="education">
+            <h2>教育经历</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025.01 - 2025.12</div>
+                    <h3>康奈尔大学 - 机械工程硕士</h3>
+                    <ul>
+                        <li><strong>主修课程</strong>: 有限元分析、控制算法、高级产品开发、计算机辅助工程、GD&T（专业排名前10%）</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021.08 - 2024.12</div>
+                    <h3>UIUC - 机械工程学士</h3>
+                    <ul>
+                        <li><strong>主修课程</strong>: 机械设计、力学结构分析、计算机辅助制造、动力学控制、力学生物学（专业排名前10%）</li>
+                        <li><strong>荣誉</strong>: 院长名单(Dean's List)连续6个学期</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>实习经历</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024.05 - 2024.08</div>
+                    <h3>结构工程师实习生 - 聚光科技（杭州）</h3>
+                    <ul>
+                        <li><strong>零部件建模</strong>: 使用ProE软件完成300+份部件的建模与图纸输出，支持ICP-MS/MS质谱仪的生产设计</li>
+                        <li><strong>结构优化</strong>: 独立优化多个结构设计，提升产品稳定性和性能，跟踪生产并完成装配检验</li>
+                        <li><strong>受力仿真分析</strong>: 使用COMSOL进行受力及热效率仿真分析，提前发现潜在的结构问题，避免产品过热或形变</li>
+                        <li><strong>设计缺陷识别</strong>: 识别并反馈10+项结构缺陷，协调生产部门修正30+项BOM零件版本问题</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023.05 - 2023.08</div>
+                    <h3>质量工程师实习生 - 锐健马斯汀医疗器械有限公司（杭州）</h3>
+                    <ul>
+                        <li><strong>生产工序优化</strong>: 优化生产工序，标准化过程检验，巡检与终检流程，提升生产效率与产品质量</li>
+                        <li><strong>图纸质量改进</strong>: 整理并优化100+份产品图纸，明确关键尺寸标注与检验标准，减少检验误差</li>
+                        <li><strong>质量检验提升</strong>: 解决200+种产品质量问题，优化检验流程与测量工具，提升检验效率与准确性</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>项目经历</h2>
+            <div class="timeline">
+		<div class="timeline-item">
+                    <div class="timeline-date">2025.01 - 至今</div>
+                    <h3> 体积增材制造(VAM)系统开发与优化 </h3>
+                    <ul>
+                        <li><strong>系统开发优化</strong>: ：参与复杂几何结构建模与高精度制造，优化系统架构，提升打印精度与生产效率。</li>
+                        <li><strong>光驱技术与树脂配方优化</strong>: 协助优化光驱技术与树脂配方，提升打印分辨率与材料性能。</li>
+                        <li><strong>数据分析支持</strong>: 设计实验并分析数据，评估优化措施效果，为技术改进提供依据。 </li>
+                    </ul>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025.01 - 至今</div>
+                    <h3>太阳能充电制热夹克 (SolFlex PF)</h3>
+                    <ul>
+                        <li><strong>创新设计</strong>: 设计集成柔性太阳能面板的加热夹克，解决传统电热夹克依赖外部电池的问题</li>
+                        <li><strong>热效率优化</strong>: 通过热分析确定最佳加热元件布局，使能量利用率提升40%</li>
+                        <li><strong>用户调研</strong>: 对NFL教练、运动员和球迷进行需求调研，平衡太阳能发电、重量和舒适度</li>
+                        <li><strong>性能测试</strong>: 在多种光照条件下测试充电效率，确保在-20℃~60℃环境下稳定工作</li>
+                        <li><strong>材料选择</strong>: 基于Ashby图表筛选材料，优化多层结构设计，吸能率提升23%</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024.08 - 2024.12</div>
+                    <h3>柔性电容应变传感器设计</h3>
+                    <ul>
+                        <li><strong>传感器设计</strong>: 使用Fusion360设计新型柔性电容应变传感器，结合注塑工艺，通过泡沫型缓冲外层将纵向干扰降低40%</li>
+                        <li><strong>新驱动方式</strong>: 采用电容器原理驱动，使温度偏移误差从±5%减少至±2%，灵敏度提升25%</li>
+                        <li><strong>仿真实验优化</strong>: 主导动力应变仿真模拟，优化材料性能与设计精确性</li>
+                        <li><strong>实验测试评估</strong>: 完成200+次循环载荷测试，验证传感器在-20℃~60℃环境下的稳定性（信号波动<3%）</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024.01 - 2024.06</div>
+                    <h3>冲击吸收结构设计与测试</h3>
+                    <ul>
+                        <li><strong>材料筛选与建模</strong>: 基于Ashby图表筛选12种材料，完成多层结构设计并建模分析</li>
+                        <li><strong>仿真实验分析</strong>: 使用Ansys显式动力学模块模拟多角度冲击，吸能率提升23%</li>
+                        <li><strong>实验平台搭建</strong>: 设计HIC测试平台并集成蜂窝显示系统，提升数据处理能力</li>
+                        <li><strong>数据采集评估</strong>: 优化传感器布局，测试数据波动控制在±5%以内</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021.08 - 2022.05</div>
+                    <h3>VEXU竞赛机器人设计与开发</h3>
+                    <ul>
+                        <li><strong>机械结构设计</strong>: 轻量化机械结构，整体减重30%，提升操作灵活性与续航性能</li>
+                        <li><strong>自动控制实现</strong>: 协助开发自动驾驶模块，进行路径规划与定位算法调试，显著提升比赛中自动得分表现</li>
+                        <li><strong>跨校协作</strong>: 代表UIUC出战VEXU世界锦标赛，在80+所大学参赛队伍中脱颖而出，晋级全球八强</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="campus">
+            <h2>校园经历</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2021.08 - 2024.11</div>
+                    <h3>UIUC中国学生会主席</h3>
+                    <ul>
+                        <li><strong>文化活动策划</strong>: 策划并组织10+场传统文化活动（如元宵晚会），累计吸引5000+人次参与</li>
+                        <li><strong>跨文化交流</strong>: 组织5次跨文化交流活动，发展2场年度千人规模跨文化晚会，促进文化理解与融合</li>
+                        <li><strong>创新活动拓展</strong>: 新增职业招聘会、宣讲会、学术交流会等活动，全年举办15场，丰富社团活动内容</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2>荣誉与奖项</h2>
+            <div class="awards">
+                <div class="award-item">
+                    <h3>UIUC 院长名单 (Dean's List)</h3>
+                    <div class="award-date">2021-2024</div>
+                    <p>连续6个学期获得UIUC工程学院院长名单荣誉，表彰学术成绩位于专业前10%</p>
+                </div>
+                <div class="award-item">
+                    <h3>VEX U 2023世界锦标赛八强</h3>
+                    <div class="award-date">2023</div>
+                    <p>代表UIUC出战VEXU世界锦标赛，在80+所大学参赛队伍中脱颖而出，晋级全球八强</p>
+                </div>
+                <div class="award-item">
+                    <h3>VEX Midwest Championship 第一名</h3>
+                    <div class="award-date">2023</div>
+                    <p>带领团队获得中西部地区VEX机器人竞赛冠军</p>
+                </div>
+                <div class="award-item">
+                    <h3>中国驻芝加哥总领馆特别优秀贡献留学生奖</h3>
+                    <div class="award-date">2023-2024</div>
+                    <p>表彰在学术、科技创新和跨文化交流方面的杰出贡献</p>
+                </div>
+                <div class="award-item">
+                    <h3>ThinkChicago Impact科技创新大赛智慧城市板块第一名</h3>
+                    <div class="award-date">2023</div>
+                    <p>开发的智慧城市解决方案获得评委一致认可，获得冠军</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>职业技能</h2>
+            <div class="skills">
+                <div class="skill-category">
+                    <h3>语言能力</h3>
+                    <ul>
+                        <li>托福110分</li>
+                        <li>GRE325分</li>
+                        <li>8年留学经验</li>
+                        <li>英语可作为工作语言</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>专业能力</h3>
+                    <ul>
+                        <li>精通GD&T、3D打印</li>
+                        <li>精通SolidWorks、ProE等建模工具</li>
+                        <li>熟练掌握Ansys、COMSOL等仿真分析软件</li>
+                        <li>熟练掌握Java、Python等编程语言</li>
+                        <li>熟悉机加工艺、板金工艺、注塑工艺、装配工艺、液压工艺</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 李铮 - 机械工程师/结构工程师</p>
+        </div>
+    </footer>
+</body>
+</html>
